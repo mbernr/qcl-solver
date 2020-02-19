@@ -8,7 +8,7 @@ To be done.
 
 ## Usage
 
-For all of the commands given here, it is assumed that the current working directory is *src*. To describe an interpretation, the predicates *in* and *out* are used. The satisfaction degree of the input formula under a given interpretation is described by the *deg* predicate.
+For all of the commands given here, it is assumed that the current working directory is *src*. To describe an interpretation, the predicates *in* and *out* are used. The satisfaction degree of the input formula under a given interpretation is described by the predicate *deg*.
 
 ### Examining a single formula
 
