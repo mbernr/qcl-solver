@@ -1,0 +1,1 @@
+in(F);out(F) :- atom(F).
