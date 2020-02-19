@@ -12,7 +12,7 @@ For all of the commands given here, it is assumed that the current working direc
 
 ### Examining a single formula
 
-Whenever a single formula is required as input, it should be described by the *formula* predicate. See, for example, the files in *src/input/single/*.
+Whenever a single formula is required as input, it should be described by the predicate *formula*. See, for example, the files in *src/input/single/*.
 
 #### Computing all models of a formula
 
