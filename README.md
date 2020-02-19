@@ -1,6 +1,6 @@
 # QCL-Solver
 
-This repository contains several ASP files written for Clingo, with which several problems regarding Qualitative Choice Logic ([[1]](#qcl_paper)) can be solved. 
+This repository contains several ASP files written for Clingo, with which some problems regarding Qualitative Choice Logic [[1]](#qcl_paper) can be solved. 
 
 ## Requirements
 
@@ -8,7 +8,7 @@ To be done.
 
 ## Usage
 
-For all of the commands given here, it is assumed that the current working directory is the *src* directory. To describe a model, the predicates *in* and *out* are used. The satisfaction degree of the input formula is described by the *deg* predicate.
+For all of the commands given here, it is assumed that the current working directory is *src*. To describe a model, the predicates *in* and *out* are used. The satisfaction degree of the input formula is described by the *deg* predicate.
 
 ### Computing all models of a single formula
 
@@ -18,8 +18,7 @@ For this command, a single formula should be provided as input, described by the
 
 ### Computing preferred models of a single formula
 
-```clingo --opt-mode=optN --quiet=1 path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_pref_model.lp 0
-```
+```clingo --opt-mode=optN --quiet=1 path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_pref_model.lp 0```
 
 For this command, a single formula should be provided as input, described by the *formula* predicate. See the files in *src/input/single* as an example.
 
