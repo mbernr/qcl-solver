@@ -7,4 +7,5 @@ deg(K) :- formula(F), sat(F,K).
 
 % Output
 #show in/1.
+#show out/1.
 #show deg/1.
