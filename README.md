@@ -1,6 +1,6 @@
 # QCL-Solver
 
-This repository contains several ASP files written for Clingo, with which some problems regarding Qualitative Choice Logic [[1]](#qcl_paper) can be solved. 
+This repository contains several ASP files written for Clingo, with which some problems regarding Qualitative Choice Logic (as described in [[1]](#qcl_paper)) can be solved. 
 
 ## Requirements
 
@@ -40,7 +40,7 @@ The direct method uses the saturation technique described in [[2]](#saturation_p
 
 #### Checking whether two formulas are strongly equivalent
 
-Two formulas are strongly equivalent iff they have the same satisfaction degree across all interpretations, and they have the same optionality. As above, we can check this directly with
+Two formulas are strongly equivalent iff they have the same satisfaction degree across all interpretations, and they have the same optionality (see also [[1]](#qcl_paper)). As above, we can check this directly with
 
 ``` clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_disjunct.lp check_strong_equiv.lp ```
 
