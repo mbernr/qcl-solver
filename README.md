@@ -24,7 +24,7 @@ Whenever a single formula is required as input, it should be described by the pr
 
 ### Comparing two formulas
 
-Whenever two formulas are required as input, they should be described by the *formula1* and *formula2* predicates. See, for example, the files in *src/input/pairs/*.
+Whenever two formulas are required as input, they should be described by the predicates *formula1* and *formula2*. See, for example, the files in *src/input/pairs/*.
 
 #### Checking whether two formulas have the same satisfaction degree across all interpretations
 
