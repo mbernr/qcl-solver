@@ -12,19 +12,19 @@ For all of the commands given here, it is assumed that the current working direc
 
 ### Examining a single formula
 
-Whenever a single formula is required as input, it should be described by the *formula* predicate. See, for example, the files in *src/input/single*.
+Whenever a single formula is required as input, it should be described by the *formula* predicate. See, for example, the files in *src/input/single/*.
 
 #### Computing all models of a formula
 
 ```clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_model.lp 0```
 
-#### Computing preferred models of a formula
+#### Computing all preferred models of a formula
 
 ```clingo --opt-mode=optN --quiet=1 path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_pref_model.lp 0```
 
 ### Comparing two formulas
 
-Whenever two formulas are required as input, they should be described by the *formula1* and *formula2* predicates. See, for example, the files in *src/input/pairs*.
+Whenever two formulas are required as input, they should be described by the *formula1* and *formula2* predicates. See, for example, the files in *src/input/pairs/*.
 
 #### Checking whether two formulas have the same satisfaction degree across all interpretations
 
@@ -34,9 +34,19 @@ This can be done in two ways. Either directly (the program is satisfiable iff th
 
 ... or indirectly (the program is unsatisfiable iff the two input formulas have the same satisfaction degree across all interpretations):
 
-```clingo input/pairs/strong_equiv_2.lp qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_not_weak_equiv.lp```
+```clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_not_weak_equiv.lp```
 
 The direct method uses the saturation technique described in [[2]](#saturation_paper). The advantage of the indirect method is that it provides a witness interpretation for when the two formulas do not have the same satisfaction degree across all interpretations.
+
+#### Checking whether two formulas are strongly equivalent
+
+Two formulas are strongly equivalent iff they have the same satisfaction degree across all interpretations, and they have the same optionality. As above, we can check this directly with
+
+``` clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_disjunct.lp check_strong_equiv.lp ```
+
+... or indirectly:
+
+```clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_not_strong_equiv.lp```
 
 ## References
 
