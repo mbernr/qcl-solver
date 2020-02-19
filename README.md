@@ -28,7 +28,7 @@ Whenever two formulas are required as input, they should be described by the *fo
 
 #### Checking whether two formulas have the same satisfaction degree across all interpretations
 
-This can be done in two ways. Either directly (the program is satisfiable iff the two input formulas have the same satisfaction degree across all interpretations) with
+This can be done in two ways. Either directly (the program is satisfiable iff the two input formulas have the same satisfaction degree across all interpretations):
 
 ``` clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_disjunct.lp check_weak_equiv.lp ```
 
@@ -40,11 +40,11 @@ The direct method uses the saturation technique described in [[2]](#saturation_p
 
 #### Checking whether two formulas are strongly equivalent
 
-Two formulas are strongly equivalent iff they have the same satisfaction degree across all interpretations, and they have the same optionality (see also [[1]](#qcl_paper)). As above, we can check this directly with
+Two formulas are strongly equivalent iff they have the same satisfaction degree across all interpretations, and they have the same optionality (see also [[1]](#qcl_paper)). Again, we can check this directly (the program is satisfiable iff the two formulas are strongly equivalent):
 
 ``` clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_disjunct.lp check_strong_equiv.lp ```
 
-... or indirectly:
+... or indirectly (the program is unsatisfiable iff the two formulas are strongly equivalent):
 
 ```clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_not_strong_equiv.lp```
 
