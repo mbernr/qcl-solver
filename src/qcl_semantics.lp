@@ -1,5 +1,5 @@
 
-% Compute optionality 
+% Compute optionality
 
 opt(F,1) :- subformula(_,F), atom(F).
 opt(F,1) :- subformula(_,F), F = neg(_).
@@ -10,7 +10,7 @@ opt(F,Y) :- subformula(_,F), F = or(G,H), opt(G,X), opt(H,Y), X < Y.
 opt(F,Z) :- subformula(_,F), F = pref(G,H), opt(G,X), opt(H,Y), Z = X + Y.
 
 
-% Computing classical models.
+% Compute classical models
 
 % Atoms
 sat(F) :- subformula(_,F), atom(F), in(F).
@@ -36,7 +36,7 @@ sat(F) :- subformula(_,F), F = pref(_,H), sat(H).
 unsat(F) :- subformula(_,F), F = pref(G,H), unsat(G), unsat(H).
 
 
-% Computing satisfaction degree.
+% Compute satisfaction degree
 
 % Atoms
 sat(F,1) :- subformula(_,F), atom(F), sat(F).
