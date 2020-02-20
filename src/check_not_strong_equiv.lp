@@ -17,6 +17,11 @@ same_optionality :- formula(F), formula(G), F != G, opt(F,K), opt(G,L), K=L.
 :- same_formula.
 :- same_degree, same_optionality.
 
+% Introducing predicate different_optionalities/0 for nice output
+different_optionalities :- not same_optionality.
+
 % Output
 #show in/1.
 #show out/1.
+#show same_optionality/0.
+#show different_optionalities/0.

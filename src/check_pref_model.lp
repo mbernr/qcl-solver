@@ -1,8 +1,8 @@
 
-% Formula must be (classically) satisfied to be a preferred model
+% Formula must be (classically) satisfied by a preferred model
 :- formula(F), not sat(F).
 
-% Introducing deg/1 predicate for nice output
+% Introducing deg/1 predicate 
 deg(K) :- formula(F), sat(F,K).
 
 % Compute preferred models
