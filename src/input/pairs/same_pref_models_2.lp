@@ -4,5 +4,5 @@ formula1(
 ).
 
 formula2(
-	pref(b,a)
+	pref(pref(a,a),b)
 ).

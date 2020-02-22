@@ -1,8 +1,8 @@
 
 formula1(
-	pref(a,b)
+	and(a,b)
 ).
 
 formula2(
-	pref(b,a)
+	or(a,b)
 ).

@@ -1,8 +1,8 @@
 
 formula1(
-	and(a,b)
+	a
 ).
 
 formula2(
-	or(a,b)
+	neg(a)
 ).

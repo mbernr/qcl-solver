@@ -4,5 +4,5 @@ formula1(
 ).
 
 formula2(
-	neg(a)
+	pref(a,b)
 ).

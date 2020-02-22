@@ -23,5 +23,4 @@ different_optionalities :- not same_optionality.
 % Output
 #show in/1.
 #show out/1.
-#show same_optionality/0.
 #show different_optionalities/0.

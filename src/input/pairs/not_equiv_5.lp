@@ -1,8 +1,8 @@
 
 formula1(
-	pref(a,b)
+	and(pref(a,b), neg(and(a,b)))
 ).
 
 formula2(
-	pref(pref(a,a),b)
+	and(pref(b,a), neg(and(a,b)))
 ).
