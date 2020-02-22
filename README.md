@@ -1,10 +1,10 @@
 # QCL-Solver
 
-This repository contains several ASP files written for Clingo, with which some problems regarding Qualitative Choice Logic (as described in [[1]](#qcl_paper)) can be solved. 
+A solver for Clingo, with which some problems regarding Qualitative Choice Logic (as described in [[1]](#qcl_paper)) can be solved. 
 
 ## Requirements
 
-To be done.
+To execute all of the programs listed below, python enabled clingo is required. See https://potassco.org/clingo/. When using only pure clingo, the last program (checking for equal preferred model) can not be executed. The programs have been tested with clingo 5.4.0, but should also work for earlier versions of clingo 5.
 
 ## Usage
 
@@ -47,6 +47,20 @@ Two formulas are strongly equivalent iff they have the same satisfaction degree 
 ... or indirectly (the program is unsatisfiable iff the two formulas are strongly equivalent):
 
 ```clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_not_strong_equiv.lp```
+
+#### Checking whether two formulas have the same preferred models
+
+``` python3 compare_pref_models.py path/to/input.lp ```
+
+The above python script makes calls to three seperate ASP programs:
+
+* Program 1 is used to compute the minimum satisfaction degree and the number of preferred models for the first formula.
+
+* Program 2 is used to compute the minimum satisfaction degree and the number of preferred models for the second formula.
+
+* Program 3 is used to enumerate common preferred models of formula1 and formula2, and to compute the number of these common preferred models.
+
+If the number of preferred models for the first formula and the second formula is the same, and if this number is also equal to the number of common preferred models, then formula1 and formula2 have exactly the same preferred models.
 
 ## References
 
