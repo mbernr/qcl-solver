@@ -4,7 +4,7 @@ An ASP based solver for Qualitative Choice Logic, as described in [[1]](#qcl_pap
 
 ## Requirements
 
-To execute all of the programs listed below, python enabled clingo is required. See https://potassco.org/clingo/. When using only pure clingo, the last program (checking for equal preferred model) can not be executed. The programs have been tested with clingo 5.4.0, but should also work for earlier versions of clingo 5.
+To execute all of the programs listed below, python enabled clingo is required. See https://potassco.org/clingo/. When using only pure clingo, the last program (checking for equal preferred models) can not be executed. The programs have been tested with clingo 5.4.0, but should also work for earlier versions of clingo 5.
 
 ## Usage
 
