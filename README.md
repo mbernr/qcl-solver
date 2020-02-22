@@ -1,6 +1,6 @@
 # QCL-Solver
 
-A solver for Clingo, with which some problems regarding Qualitative Choice Logic (as described in [[1]](#qcl_paper)) can be solved. 
+An ASP based solver for Qualitative Choice Logic (as described in [[1]](#qcl_paper)). 
 
 ## Requirements
 
