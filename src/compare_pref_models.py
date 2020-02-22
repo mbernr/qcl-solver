@@ -2,9 +2,10 @@ import clingo
 import math
 import sys
 
-if len(sys.argv) < 2:
-	print("Usage: {} path/to/input.lp".format(sys.argv[0]))
-	sys.exit()
+
+# on_model functions that update the mininum degree for
+# formula1/formula2 if necessary, and count the number
+# of preferred models.
 
 def formula1_on_model(model):
 	if model.optimality_proven:
@@ -26,7 +27,16 @@ def common_on_model(model):
 	number_of_pref_models_common += 1
 
 
+# Checking command line arguments 
+
+if len(sys.argv) < 2:
+	print("Usage: {} path/to/input.lp".format(sys.argv[0]))
+	sys.exit()
+
 input_path = sys.argv[1]
+
+
+# Initializing global variables
 
 min_deg_formula1 = -1
 min_deg_formula2 = -1
@@ -116,7 +126,4 @@ if have_same_pref_models:
 	print("Same preferred models: YES")
 else:
 	print("Same preferred models: NO")
-
-
-
 

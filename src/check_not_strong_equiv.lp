@@ -1,4 +1,6 @@
 
+% If these rules were omitted, formula1 and formula2 
+% would not be processed by qcl_syntax.lp and qcl_semantics.lp
 formula(F) :- formula1(F).
 formula(F) :- formula2(F).
 
@@ -7,14 +9,11 @@ formula(F) :- formula2(F).
 deg(F,K) :- formula(F), sat(F,K).
 deg(F,#sup) :- formula(F), not sat(F).
 
-% Check whether input formulas are syntactically equivalent,
-% and whether the have the same satisfaction degree/optionality.
-same_formula :- #count{F:formula(F)} < 2.
-same_degree :- formula(F), formula(G), F != G, deg(F,K), deg(G,L), K=L.
-same_optionality :- formula(F), formula(G), F != G, opt(F,K), opt(G,L), K=L.
-
-% Check for strong equivalence
-:- same_formula.
+% Filtering out interpretations for which the two 
+% input formulas have the same satisfaction degree,
+% (and the same optionality).
+same_degree :- formula1(F), formula2(G), deg(F,K), deg(G,L), K=L.
+same_optionality :- formula1(F), formula2(G), opt(F,K), opt(G,L), K=L.
 :- same_degree, same_optionality.
 
 % Introducing predicate different_optionalities/0 for nice output
@@ -22,5 +21,4 @@ different_optionalities :- not same_optionality.
 
 % Output
 #show in/1.
-#show out/1.
 #show different_optionalities/0.

@@ -1,5 +1,5 @@
 
-% Formula must be (classicaly) satisfied to be a model
+% Formula must be (classicaly) satisfied 
 :- formula(F), not sat(F).
 
 % Introducing deg/1 predicate for nice output
