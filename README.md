@@ -16,11 +16,11 @@ Whenever a single formula is required as input, it should be described by the pr
 
 #### Computing all models of a formula
 
-```clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_model.lp 0```
+```clingo 0 qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_model.lp path/to/input.lp```
 
 #### Computing all preferred models of a formula
 
-```clingo --opt-mode=optN --quiet=1 path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_pref_model.lp 0```
+```clingo 0 --opt-mode=optN --quiet=1 qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_pref_model.lp path/to/input.lp```
 
 ### Comparing two formulas
 
@@ -30,11 +30,11 @@ Whenever two formulas are required as input, they should be described by the pre
 
 This can be done in two ways. Either directly (the program is satisfiable iff the two input formulas have the same satisfaction degree across all interpretations):
 
-``` clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_disjunct.lp check_weak_equiv.lp ```
+``` clingo qcl_syntax.lp qcl_semantics.lp guess_disjunct.lp check_weak_equiv.lp path/to/input.lp```
 
 ... or indirectly (the program is unsatisfiable iff the two input formulas have the same satisfaction degree across all interpretations):
 
-```clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_not_weak_equiv.lp```
+```clingo qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_not_weak_equiv.lp path/to/input.lp```
 
 The direct method uses the saturation technique described in [[2]](#saturation_paper). The advantage of the indirect method is that it provides a witness interpretation for when the two formulas do not have the same satisfaction degree across all interpretations.
 
@@ -42,11 +42,11 @@ The direct method uses the saturation technique described in [[2]](#saturation_p
 
 Two formulas are strongly equivalent iff they have the same satisfaction degree across all interpretations, and they have the same optionality (see also [[1]](#qcl_paper)). Again, we can check this directly (the program is satisfiable iff the two formulas are strongly equivalent):
 
-``` clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_disjunct.lp check_strong_equiv.lp ```
+``` clingo qcl_syntax.lp qcl_semantics.lp guess_disjunct.lp check_strong_equiv.lp path/to/input.lp```
 
 ... or indirectly (the program is unsatisfiable iff the two formulas are strongly equivalent):
 
-```clingo path/to/input.lp qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_not_strong_equiv.lp```
+```clingo qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_not_strong_equiv.lp path/to/input.lp```
 
 #### Checking whether two formulas have the same preferred models
 
