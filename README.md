@@ -54,9 +54,7 @@ Two formulas are strongly equivalent iff they have the same satisfaction degree 
 
 The above python script makes calls to three seperate ASP programs:
 
-* Program 1 is used to compute the minimum satisfaction degree and the number of preferred models for the first formula.
-
-* Program 2 is used to compute the minimum satisfaction degree and the number of preferred models for the second formula.
+* Programs 1 and 2 are used to compute the number of preferred models for the first and second formula respectively.
 
 * Program 3 is used to enumerate common preferred models of formula1 and formula2, and to compute the number of these common preferred models.
 
