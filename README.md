@@ -20,7 +20,14 @@ Whenever a single formula is required as input, it should be described by the pr
 
 #### Computing all preferred models of a formula
 
+This can be done in two ways. Either by using clingo's `#minimize` statement:
+
 ```clingo 0 --opt-mode=optN --quiet=1 qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_pref_model.lp path/to/input.lp```
+
+... or by guessing a second interpretation, and then using the saturation technique described in [[2]](#saturation_paper):
+
+```clingo 0 qcl_syntax.lp qcl_semantics.lp guess_normal.lp guess_additional.lp check_pref_model_no_minimization.lp input/single/5.lp```
+
 
 ### Comparing two formulas
 
@@ -36,7 +43,7 @@ This can be done in two ways. Either directly (the program is satisfiable iff th
 
 ```clingo qcl_syntax.lp qcl_semantics.lp guess_normal.lp check_not_weak_equiv.lp path/to/input.lp```
 
-The direct method uses the saturation technique described in [[2]](#saturation_paper). The advantage of the indirect method is that it provides a witness interpretation for when the two formulas do not have the same satisfaction degree across all interpretations.
+The direct method uses the saturation technique. The advantage of the indirect method is that it provides a witness interpretation for when the two formulas do not have the same satisfaction degree across all interpretations.
 
 #### Checking whether two formulas are strongly equivalent
 
