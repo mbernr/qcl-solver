@@ -39,7 +39,7 @@ This can be done in two ways. Either by using clingo's `#minimize` statement:
 
 ### Comparing two formulas
 
-Whenever two formulas are required as input, they should be described by the predicates *formula1* and *formula2*. For example, and input file for two formulas could look like this:
+Whenever two formulas are required as input, they should be described by the predicates *formula1* and *formula2*:
 
 ```
 formula1(
