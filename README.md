@@ -79,7 +79,7 @@ Two formulas are strongly equivalent iff they have the same satisfaction degree 
 
 ``` python3 compare_pref_models.py path/to/input.lp ```
 
-The above python script makes calls to three seperate ASP programs:
+The above python script makes calls to three separate ASP programs:
 
 * Programs 1 and 2 are used to compute the number of preferred models for the first and second formula respectively.
 
