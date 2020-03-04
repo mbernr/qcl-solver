@@ -12,7 +12,15 @@ For all of the commands given here, it is assumed that the current working direc
 
 ### Examining a single formula
 
-Whenever a single formula is required as input, it should be described by the predicate *formula*. See, for example, the files in *src/input/single/*.
+Whenever a single formula is required as input, it should be described by the predicate *formula*. The ordered disjunction  of QCL is written as *pref*, while the classical connectives are given by *and*, *or*, and *neg*. For example, an input file could look like this: 
+
+```
+formula(
+	and(pref(pref(a,b),c), neg(b))
+).
+```
+
+For further examples, see the files in *src/input/single/*.
 
 #### Computing all models of a formula
 
@@ -26,12 +34,24 @@ This can be done in two ways. Either by using clingo's `#minimize` statement:
 
 ... or by guessing a second interpretation, and then using the saturation technique described in [[2]](#saturation_paper):
 
-```clingo 0 qcl_syntax.lp qcl_semantics.lp guess_normal.lp guess_additional.lp check_pref_model_no_minimization.lp input/single/5.lp```
+```clingo 0 qcl_syntax.lp qcl_semantics.lp guess_normal.lp guess_additional.lp check_pref_model_no_minimization.lp path/to/input.lp```
 
 
 ### Comparing two formulas
 
-Whenever two formulas are required as input, they should be described by the predicates *formula1* and *formula2*. See, for example, the files in *src/input/pairs/*.
+Whenever two formulas are required as input, they should be described by the predicates *formula1* and *formula2*. For example, and input file for two formulas could look like this:
+
+```
+formula1(
+	pref(a,b)
+).
+
+formula2(
+	pref(b,a)
+).
+```
+
+For further examples, see the files in *src/input/pairs/*.
 
 #### Checking whether two formulas have the same satisfaction degree across all interpretations
 
